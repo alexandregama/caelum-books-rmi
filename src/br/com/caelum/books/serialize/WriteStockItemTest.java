@@ -10,7 +10,7 @@ import br.com.caelum.books.estoque.StockItem;
 public class WriteStockItemTest {
 
 	public static void main(String[] args) throws FileNotFoundException, IOException {
-		StockItem stock = new StockItem("ARQ", 5);
+		StockItem stock = new StockItem("ARQ", 5, 1);
 		
 		try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("stock.txt"))) {
 			oos.writeObject(stock);
