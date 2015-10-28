@@ -11,7 +11,7 @@ public class StockService extends UnicastRemoteObject implements StockRmi {
 		super();
 	}
 
-	private RmiStockItemsDao repository = new RmiStockItemsDao();
+	private HashMapStockItemsDao repository = new HashMapStockItemsDao();
 	
 	@Override
 	public StockItem getByCode(String code) throws RemoteException {
