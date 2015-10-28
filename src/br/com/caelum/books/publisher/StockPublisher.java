@@ -1,4 +1,4 @@
-package br.com.caelum.books;
+package br.com.caelum.books.publisher;
 
 import java.net.MalformedURLException;
 import java.rmi.Naming;

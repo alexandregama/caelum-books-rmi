@@ -11,11 +11,16 @@ public class StockService extends UnicastRemoteObject implements StockRmi {
 		super();
 	}
 
-	private StockItems repository = new StockItems();
+	private RmiStockItemsDao repository = new RmiStockItemsDao();
 	
 	@Override
 	public StockItem getByCode(String code) throws RemoteException {
 		return repository.get(code);
+	}
+
+	@Override
+	public void decreaseQuantity(String code, Integer quantity) throws RemoteException {
+		repository.updateQuantity(code, quantity);
 	}
 
 }
