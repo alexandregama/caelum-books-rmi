@@ -22,5 +22,9 @@ public class StockItem implements Serializable {
 	public Integer getQuantity() {
 		return quantity;
 	}
-	
+
+	@Override
+	public String toString() {
+		return "code: " + this.code + ", quantity: " + this.quantity;
+	}
 }
