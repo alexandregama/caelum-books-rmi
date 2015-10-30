@@ -14,6 +14,7 @@ public class WriteStockItemTest {
 		
 		try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("stock.txt"))) {
 			oos.writeObject(stock);
+			System.out.println("StockItem was written!");
 		}
 	}
 	

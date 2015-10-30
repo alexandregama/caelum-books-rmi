@@ -13,6 +13,7 @@ public class ReadStockItemTest {
 		try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream("stock.txt"))) {
 			StockItem stock = (StockItem) ois.readObject();
 			System.out.println(stock);
+			System.out.println("StockItem was written!");
 		}
 	}
 	
