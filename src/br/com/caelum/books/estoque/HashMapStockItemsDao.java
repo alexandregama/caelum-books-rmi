@@ -1,6 +1,8 @@
 package br.com.caelum.books.estoque;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 class HashMapStockItemsDao {
@@ -23,6 +25,13 @@ class HashMapStockItemsDao {
 		StockItem stockItem = itens.get(code);
 		
 		stockItem.decreaseQuantity(quantity);
+	}
+
+	public List<StockItem> getAllStockItemsFrom(List<String> codes) {
+		List<StockItem> items = new ArrayList<>();
+		codes.forEach(code -> items.add(itens.get(code)));
+		
+		return items;
 	}
 	
 }
