@@ -15,7 +15,7 @@ public class StockPublisher {
 		
 		try {
 			LocateRegistry.createRegistry(1099);
-			Naming.rebind("/stock", service);
+			Naming.rebind("stock", service);
 			System.out.println("Stock service is ready to be used!");
 		} catch (MalformedURLException e) {
 			throw new RuntimeException("Error while trying to rebind a service with MalformedUrl.", e);

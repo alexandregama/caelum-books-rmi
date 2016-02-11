@@ -2,6 +2,7 @@ package br.com.caelum.books.estoque;
 
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
+import java.util.List;
 
 public class StockService extends UnicastRemoteObject implements StockRmi {
 	
@@ -21,6 +22,11 @@ public class StockService extends UnicastRemoteObject implements StockRmi {
 	@Override
 	public void decreaseQuantity(String code, Integer quantity) throws RemoteException {
 		repository.updateQuantity(code, quantity);
+	}
+
+	@Override
+	public List<StockItem> getAllStockItems(List<String> codes) throws RemoteException {
+		return repository.getAllStockItemsFrom(codes);
 	}
 
 }
